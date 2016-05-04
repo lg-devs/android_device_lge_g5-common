@@ -330,6 +330,8 @@ vendor/lib/lib-sec-disp.so
 
 # DRM
 bin/qseecomd
+bin/seempd
+vendor/bin/qseeproxydaemon
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
 vendor/lib64/libQSEEComAPI.so
@@ -344,6 +346,8 @@ vendor/lib/libssd.so
 vendor/lib/libtzdrmgenprov.so
 
 # Fingerprint
+bin/fingerprintd
+bin/fpc_early_loader
 lib64/hw/fingerprint.default.so
 lib64/libfpfactory.so
 lib64/libfpfactory_jni.so
@@ -531,7 +535,7 @@ vendor/lib/libperipheral_client.so
 # Perf
 bin/energy-awareness
 bin/msm_irqbalance
--vendor/bin/perfd
+vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
@@ -544,9 +548,12 @@ vendor/lib/libmm-qdcm.so
 
 # QMI
 bin/irsc_util
+bin/qcom-system-daemon
 lib64/libqdMetaData.so
 lib64/libqti-iop.so
 lib/libqdMetaData.so
+vendor/bin/pd-mapper
+vendor/bin/qti
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -656,6 +663,7 @@ vendor/lib/libsystem_health_mon.so
 vendor/qcril.db
 
 # Sensors
+bin/sensors.qcom
 lib64/hw/sensors.msm8996.so
 lib64/hw/sensors.vr.so
 lib/hw/sensors.msm8996.so
@@ -681,6 +689,7 @@ vendor/lib/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
 
 # Thermal
+vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 vendor/lib/libthermalclient.so

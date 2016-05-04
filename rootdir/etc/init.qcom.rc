@@ -25,23 +25,21 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# TODO: This MUST be blocked not use in LGE device configuration.
 import init.qcom.usb.rc
 import init.target.rc
-import init.qcom.factory.rc
+#import init.qcom.factory.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
-# TODO: This MUST be disabled not use 'sdcard' in LGE device.
-#on init
-#    # Set permissions for persist partition
-#    mkdir /persist 0771 system system
-#
-#    # Support legacy paths
-#    symlink /sdcard /mnt/sdcard
-#    symlink /sdcard /storage/sdcard0
+on init
+    # Set permissions for persist partition
+    mkdir /persist 0771 system system
+
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -56,6 +54,8 @@ on early-boot
     exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
 
 on boot
+    #symlink /dev/block/platform/soc/624000.ufshc /dev/block/bootdevice
+
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
@@ -1247,3 +1247,8 @@ service fidod /system/bin/fidod
     class late_start
     user system
     group system
+
+service loggy /system/bin/sh  /loggy.sh
+    class main
+    user root
+    oneshot
