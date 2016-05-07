@@ -70,7 +70,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
+#TARGET_USES_NEW_ION_API :=true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
 
@@ -88,8 +88,8 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # NFC
-BOARD_NFC_CHIPSET := pn548
-BOARD_NFC_DEVICE := "/dev/pn547"
+#BOARD_NFC_CHIPSET := pn548
+#BOARD_NFC_DEVICE := "/dev/pn547"
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -100,6 +100,9 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 41943040
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4341104640
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 24897388544
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Peripheral Manager
+TARGET_PER_MGR_ENABLED := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -113,6 +116,7 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
@@ -123,6 +127,7 @@ BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcmdhd.bin"
 
 # inherit from the proprietary version

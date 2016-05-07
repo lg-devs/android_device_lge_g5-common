@@ -61,8 +61,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.debug.sensors.hal=i \
-	debug.qualcomm.sns.daemon=i \
+	persist.debug.sensors.hal=e \
+	debug.qualcomm.sns.daemon=e \
 	debug.qualcomm.sns.libsensor1=e \
 	persist.sensors.mag_filter_size=8 \
 	persist.sensors.knock_delay=1000 \
@@ -80,8 +80,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# ADB crap
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.secure=0 \
-	ro.adb.secure=0
