@@ -18,7 +18,7 @@
 $(call inherit-product-if-exists, vendor/lge/g5-common/g5-common-vendor.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+#DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
@@ -140,26 +140,26 @@ PRODUCT_PACKAGES += \
     liboverlay
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    LGDoze
+#PRODUCT_PACKAGES += \
+#    LGDoze
 
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
 
 # Gesture handler
-PRODUCT_PACKAGES += \
-    GestureHandler
+#PRODUCT_PACKAGES += \
+#    GestureHandler
 
 # GPS
-PRODUCT_PACKAGES += \
-    gps.msm8996
+#PRODUCT_PACKAGES += \
+#    gps.msm8996
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
-		$(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/etc/lowi.conf:system/etc/lowi.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
@@ -183,12 +183,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
 # Lights
-PRODUCT_PACKAGES += \
-    lights.msm8996
+#PRODUCT_PACKAGES += \
+#    lights.msm8996
 
 # LiveDisplay native
-PRODUCT_PACKAGES += \
-    libjni_livedisplay
+#PRODUCT_PACKAGES += \
+#    libjni_livedisplay
 
 # Media
 PRODUCT_COPY_FILES += \
