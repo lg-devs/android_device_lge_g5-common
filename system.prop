@@ -3,18 +3,20 @@
 #
 
 # Audio
-ro.qc.sdk.audio.ssr=false
-ro.qc.sdk.audio.fluencetype=fluence
+ro.qc.sdk.audio.ssr=true
+ro.qc.sdk.audio.fluencetype=fluencepro
+persist.audio.fluence.mode=endfire
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 tunnel.audio.encode=false
 media.aac_51_output_enabled=true
-audio.offload.buffer.size.kb=64
+audio.offload.buffer.size.kb=1024
 audio.offload.video=true
-audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
-audio.offload.track.enable=false
+audio.offload.pcm.32bit.enable=true
+audio.offload.track.enable=true
 audio.deep_buffer.media=true
 use.voice.path.for.pcm.voip=true
 audio.offload.multiaac.enable=true
@@ -32,6 +34,12 @@ audio_hal.period_size=160
 
 # Bluetooth
 ro.bt.bdaddr_path="/data/misc/bdaddr"
+ro.bluetooth.a4wp=true
+ro.bluetooth.alwaysbleon=true
+ro.bluetooth.emb_wp_mode=true
+ro.bluetooth.remote.autoconnect=true
+ro.bluetooth.wipower=true
+bt.max.hfpclient.connections=1
 
 # Camera
 ro.camera.notify_nfc=1
@@ -61,12 +69,6 @@ ro.sf.lcd_density=640
 
 # Factory Reset Protection (FRP)
 ro.frp.pst=/dev/block/bootdevice/by-name/persistent
-
-# Fluence
-ro.qc.sdk.audio.fluencetype=fluence
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
 
 # GMS
 # Device was launched with M
